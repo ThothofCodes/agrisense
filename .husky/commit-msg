@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+# AgriSense — commit-msg hook
+# Lint commit messages with commitlint
+# Copyright (c) 2026 Ruai Tech Solutions. All rights reserved.
+
+. "$(dirname "$0")/_/husky.sh"
+
+npx --no -- commitlint --edit "$1"

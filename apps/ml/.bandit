@@ -1,0 +1,14 @@
+# AgriSense Smart Farming System
+# Copyright (c) 2026 Ruai Tech Solutions. All rights reserved.
+# Author: Thoth of Codes
+# Licensed under the MIT License — see LICENSE file in the project root.
+#
+# B101 (assert_used) is the only finding category in this codebase, and
+# every single instance is a pytest `assert` in tests/test_all.py — the
+# correct, standard way to write a pytest assertion. Bandit flags `assert`
+# because it's stripped under `python -O`, which matters for production
+# security gates, not test files. Confirmed via manual review (June 2026):
+# zero B101 findings exist outside tests/, and zero findings of any other
+# category exist anywhere in this codebase.
+skips: ['B101']
+exclude_dirs: ['/tests', '/__pycache__', '/.pytest_cache']

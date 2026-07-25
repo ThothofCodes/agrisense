@@ -1,0 +1,23 @@
+# AgriSense ML — Development dependencies
+# Install with: pip install -r requirements-dev.txt
+# Copyright (c) 2026 Ruai Tech Solutions. All rights reserved.
+
+-r requirements.txt
+
+# Testing
+pytest==8.3.4
+pytest-cov==6.0.0
+
+# Linting (matching CI versions)
+flake8==7.1.1
+bandit==1.8.3
+
+# Type checking (optional)
+mypy==1.14.1
+
+# Formatting (optional)
+black==24.10.0
+isort==5.13.2
+
+# Pre-commit hooks (optional, for local dev)
+pre-commit==4.1.0

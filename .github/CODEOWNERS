@@ -1,0 +1,36 @@
+# AgriSense Smart Farming System
+# Copyright (c) 2026 Ruai Tech Solutions. All rights reserved.
+# Author: Thoth of Codes
+# Licensed under the MIT License — see LICENSE file in the project root.
+#
+# Each line is a file pattern followed by one or more owners.
+# Order matters: the last matching pattern takes precedence.
+
+# Global owners
+* @thoth-codes
+
+# API service
+/apps/api/ @thoth-codes
+
+# ML service
+/apps/ml/ @thoth-codes
+
+# Frontend
+/apps/web/ @thoth-codes
+
+# Infrastructure & DevOps
+/infrastructure/ @thoth-codes
+/.github/ @thoth-codes
+/Dockerfile* @thoth-codes
+/docker-compose* @thoth-codes
+
+# CI/CD — changes need extra review
+/.github/workflows/ @thoth-codes
+
+# Security-sensitive files
+.env.example @thoth-codes
+/infrastructure/nginx/ @thoth-codes
+/infrastructure/mosquitto/ @thoth-codes
+
+# Documentation
+*.md @thoth-codes

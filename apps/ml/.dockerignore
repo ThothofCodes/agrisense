@@ -1,0 +1,50 @@
+# AgriSense ML — Docker build context ignore
+
+# Python caches & virtual envs
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# ML model artifacts (managed via model registry, not in image)
+models/*.joblib
+models/*.pkl
+models/*.bin
+
+# Tests
+tests/
+.pytest_cache/
+htmlcov/
+coverage/
+.cache/
+
+# Lint configs
+.flake8
+.bandit
+
+# IDE & OS
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Git
+.git
+.gitignore
+
+# Build
+dist/
+*.egg-info/
+
+# Data files (too large for images)
+*.csv
+*.json
+*.parquet

@@ -1,0 +1,12 @@
+{
+  "preset": "ts-jest",
+  "testEnvironment": "node",
+  "testMatch": ["**/__tests__/**/*.test.ts"],
+  "transform": { "^.+\\.ts$": "ts-jest" },
+  "moduleFileExtensions": ["ts", "js", "json"],
+  "setupFiles": ["<rootDir>/src/__tests__/setup-clerk.ts"],
+  "testTimeout": 30000,
+  "globals": {
+    "ts-jest": { "tsconfig": "tsconfig.json" }
+  }
+}

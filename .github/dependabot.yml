@@ -1,0 +1,132 @@
+# AgriSense Smart Farming System
+# Copyright (c) 2026 Ruai Tech Solutions. All rights reserved.
+# Author: Thoth of Codes
+# Licensed under the MIT License — see LICENSE file in the project root.
+
+version: 2
+updates:
+  # ── Root npm (monorepo workspaces) ──────────────────────────────────────────
+  - package-ecosystem: npm
+    directory: '/'
+    schedule:
+      interval: weekly
+      day: monday
+      time: '09:00'
+      timezone: Africa/Nairobi
+    open-pull-requests-limit: 10
+    versioning-strategy: increase
+    groups:
+      typescript-eslint:
+        patterns:
+          - '@typescript-eslint/*'
+      react:
+        patterns:
+          - 'react'
+          - 'react-dom'
+          - '@types/react'
+          - '@types/react-dom'
+    labels:
+      - dependencies
+      - automated
+    commit-message:
+      prefix: 'chore'
+      prefix-development: 'chore'
+    reviewers:
+      - thoth-codes
+
+  # ── API npm ─────────────────────────────────────────────────────────────────
+  - package-ecosystem: npm
+    directory: '/apps/api'
+    schedule:
+      interval: weekly
+      day: monday
+      time: '09:00'
+      timezone: Africa/Nairobi
+    open-pull-requests-limit: 10
+    versioning-strategy: increase
+    groups:
+      express:
+        patterns:
+          - 'express'
+          - '@types/express'
+      jest:
+        patterns:
+          - 'jest'
+          - '@types/jest'
+          - 'ts-jest'
+          - 'supertest'
+          - '@types/supertest'
+    labels:
+      - dependencies
+      - api
+    commit-message:
+      prefix: 'chore(api)'
+      prefix-development: 'chore(api)'
+
+  # ── Web npm ─────────────────────────────────────────────────────────────────
+  - package-ecosystem: npm
+    directory: '/apps/web'
+    schedule:
+      interval: weekly
+      day: monday
+      time: '09:00'
+      timezone: Africa/Nairobi
+    open-pull-requests-limit: 10
+    versioning-strategy: increase
+    groups:
+      react-vite:
+        patterns:
+          - 'react*'
+          - 'vite'
+          - '@vitejs/*'
+          - '@types/react*'
+    labels:
+      - dependencies
+      - web
+    commit-message:
+      prefix: 'chore(web)'
+      prefix-development: 'chore(web)'
+
+  # ── ML Python ───────────────────────────────────────────────────────────────
+  - package-ecosystem: pip
+    directory: '/apps/ml'
+    schedule:
+      interval: weekly
+      day: tuesday
+      time: '09:00'
+      timezone: Africa/Nairobi
+    open-pull-requests-limit: 5
+    groups:
+      ml-core:
+        patterns:
+          - 'numpy'
+          - 'pandas'
+          - 'scikit-learn'
+          - 'xgboost'
+          - 'lightgbm'
+      fastapi:
+        patterns:
+          - 'fastapi'
+          - 'uvicorn'
+          - 'pydantic'
+          - 'starlette'
+    labels:
+      - dependencies
+      - ml
+    commit-message:
+      prefix: 'chore(ml)'
+      prefix-development: 'chore(ml)'
+
+  # ── GitHub Actions ─────────────────────────────────────────────────────────
+  - package-ecosystem: github-actions
+    directory: '/'
+    schedule:
+      interval: monthly
+      time: '09:00'
+      timezone: Africa/Nairobi
+    open-pull-requests-limit: 5
+    labels:
+      - dependencies
+      - ci-cd
+    commit-message:
+      prefix: 'chore(ci)'

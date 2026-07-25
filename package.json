@@ -1,0 +1,36 @@
+{
+  "name": "agrisense",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=apps/api\" \"npm run dev --workspace=apps/ml\" \"npm run dev --workspace=apps/web\"",
+    "build": "npm run build --workspace=apps/api && npm run build --workspace=apps/web",
+    "test": "npm run test --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "docker:up": "docker compose -f infrastructure/docker-compose.yml up -d",
+    "docker:down": "docker compose -f infrastructure/docker-compose.yml down",
+    "db:migrate": "node scripts/migrate.js",
+    "db:seed": "node scripts/seed.js",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "concurrently": "^8.2.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.0",
+    "prettier": "^3.5.0"
+  },
+  "dependencies": {
+    "axios": "^1.18.0"
+  },
+  "author": "Thoth of Codes <admin@ruaitechsolutions.co.ke> (Ruai Tech Solutions)",
+  "license": "MIT",
+  "copyright": "Copyright \u00a9 2026 Ruai Tech Solutions. All Rights Reserved.",
+  "overrides": {
+    "node-cron": { "uuid": "^11.1.1" }
+  }
+}

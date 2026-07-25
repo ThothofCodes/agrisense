@@ -1,0 +1,18 @@
+# AgriSense Smart Farming System
+# Copyright (c) 2026 Ruai Tech Solutions. All rights reserved.
+# Author: Thoth of Codes
+# Licensed under the MIT License — see LICENSE file in the project root.
+
+[flake8]
+max-line-length = 160
+exclude = tests/__pycache__,__pycache__,.pytest_cache,venv,.venv
+# E2xx/E3xx (whitespace/blank-line spacing) and E701 (one-line if) are
+# deliberately relaxed: the crop/sensor lookup tables in recommend.py,
+# sfs.py, irrigation.py, and pest.py use intentionally aligned dict/tuple
+# literals and compact one-line conditionals for readability as data
+# tables, not prose code. E402 is needed because tests/test_all.py
+# deliberately does `sys.path.insert(0, '.')` before its imports so the
+# test file can be run from any working directory. F4xx (unused imports),
+# F8xx (undefined names/unused locals), and E9xx (syntax) remain fully
+# active — those are real bugs, not style choices.
+extend-ignore = E127,E221,E222,E231,E251,E261,E262,E272,E302,E303,E305,E402,E701,E501

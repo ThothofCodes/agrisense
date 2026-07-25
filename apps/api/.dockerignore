@@ -1,0 +1,42 @@
+# AgriSense API — Docker build context ignore
+# Keep the image lean and avoid leaking secrets.
+
+# Dependencies (reinstalled inside container)
+node_modules/
+npm-debug.log*
+
+# Build artifacts
+dist/
+*.tsbuildinfo
+coverage/
+.nyc_output/
+
+# Environment — NEVER copy into images
+.env
+.env.*
+!.env.example
+
+# IDE & OS
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Tests (not needed in production image)
+__tests__/
+jest.config.json
+tsconfig.json
+
+# Logs
+logs/
+*.log
+
+# CI/CD
+.github/
