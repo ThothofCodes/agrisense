@@ -10,7 +10,7 @@ pytest-cov==6.0.0
 
 # Linting (matching CI versions)
 flake8==7.1.1
-bandit==1.8.3
+bandit==1.9.4
 
 # Type checking (optional)
 mypy==1.14.1
