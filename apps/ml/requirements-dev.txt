@@ -17,7 +17,7 @@ mypy==1.14.1
 
 # Formatting (optional)
 black==24.10.0
-isort==5.13.2
+isort==8.0.1
 
 # Pre-commit hooks (optional, for local dev)
 pre-commit==4.1.0
