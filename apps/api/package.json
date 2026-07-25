@@ -22,7 +22,7 @@
     "jsonwebtoken": "^9.0.2",
     "morgan": "^1.10.0",
     "mqtt": "^5.3.3",
-    "node-cron": "^3.0.3",
+    "node-cron": "^4.6.0",
     "pg": "^8.11.3",
     "redis": "^4.6.10",
     "speakeasy": "^2.0.0",
