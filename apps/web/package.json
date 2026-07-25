@@ -21,7 +21,7 @@
     "react-dom": "^18.2.0",
     "react-leaflet": "^4.2.1",
     "react-router-dom": "^6.21.1",
-    "recharts": "^2.10.3",
+    "recharts": "^3.10.0",
     "zustand": "^4.4.7"
   },
   "devDependencies": {
